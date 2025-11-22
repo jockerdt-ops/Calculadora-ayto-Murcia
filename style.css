@@ -1,0 +1,178 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    margin: 0;
+}
+
+#app-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+    /* Mantenemos la posición relativa */
+    position: relative; 
+    /* Altura MÁXIMA que puede ocupar el contenedor */
+    max-height: 95vh; /* Permite que ocupe hasta el 90% de la altura de la ventana */
+    min-height: 700px; 
+    text-align: center;
+    
+    /* CAMBIO CLAVE: Permite desplazamiento vertical cuando el contenido es demasiado largo */
+    overflow-y: auto; 
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+
+header {
+    background-color: #d90000;
+    color: white;
+    padding: 10px 0;
+    
+    /* AJUSTE CLAVE 1: Eliminamos el margen negativo para que no se superponga */
+    /* Margen: Arriba: -30px, Derecha: -30px, Abajo: 30px (Aumentamos), Izquierda: -30px */
+    margin: -30px -30px 30px -30px; 
+    
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    z-index: 10;
+    text-align: center; /* Mantenemos el texto centrado */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+header p {
+    margin: 5px 0 0 0;
+    font-size: 0.9em;
+}
+
+/* Estilo para las secciones (pantallas) */
+.screen {
+    display: none;
+    animation: fadeIn 0.5s;
+    
+    position: absolute; 
+    /* AJUSTE CLAVE 2: Aumentamos 'top' para que empiece más abajo, dejando espacio al encabezado. */
+    top: 130px; /* Aumentado de 90px a 130px */
+    
+    left: 30px; 
+    right: 30px; 
+    width: calc(100% - 60px); 
+    padding-bottom: 30px; 
+}
+
+.screen.active {
+    display: block;
+}
+
+/* Animación de transición */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    color: #007bff;
+    margin-bottom: 25px;
+    font-size: 1.5em;
+}
+
+/* ... (El resto del CSS de botones, info-box, etc., sigue igual) ... */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 350px;
+}
+
+button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.options-group button {
+    display: block;
+    margin: 10px auto;
+}
+
+.back-button {
+    background-color: #6c757d;
+    margin-top: 20px;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+}
+
+.info-box {
+    background-color: #e9ecef;
+    border-left: 5px solid #d90000;
+    padding: 15px;
+    margin-top: 30px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.info-box h3 {
+    color: #d90000;
+    margin-top: 0;
+}
+
+.result-box {
+    text-align: left;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.result-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.result-box li {
+    background-color: #e2e6ea;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+.highlight {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #155724;
+    background-color: #d4edda;
+    padding: 10px;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.negative h2 {
+    color: #dc3545;
+}
+
+.positive h2 {
+    color: #28a745;
+}

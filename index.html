@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SACA CUENTAS - Acuerdo Ayuntamiento de Murcia</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <header>
+        <h1>SACA CUENTAS</h1>
+        <p>Sección Sindical SPPLB - Ayto. de Murcia</p>
+    </header>
+
+    <main id="app-container">
+        
+        <section class="screen active" id="screen-1">
+            <h2>¿QUIERES SABER CUÁNTO VAN A CAMBIAR TUS RETRIBUCIONES CON EL NUEVO ACUERDO DE CONDICIONES DEL AYUNTAMIENTO DE MURCIA?</h2>
+            <button onclick="goToScreen(2)">Pincha aquí 👇</button>
+
+            <div class="info-box">
+                <h3>Sabías que…?</h3>
+                <p>La aprobación del nuevo Acuerdo de Condiciones mejora retribuciones de los empleados municipales, como la **carrera horizontal** (a partir de 10 años de antigüedad), y el **plus de sábado**, mientras reduce el **C.R.J.** en Policía Local y Bomberos.</p>
+                <button onclick="goToScreen(2)">Veamos cuánto 👇</button>
+            </div>
+        </section>
+
+        <section class="screen" id="screen-2">
+            <h2>LLEVAS MÁS DE 3 AÑOS EN EL AYUNTAMIENTO DE MURCIA?</h2>
+            <div class="options-group">
+                <button onclick="goToScreen(3)">SI</button>
+                <button onclick="goToScreen(22)">NO</button>
+            </div>
+        </section>
+
+        <section class="screen negative" id="screen-22">
+            <h3>(NO) LO SENTIMOS.</h3>
+            <p>Según el Acuerdo de Condiciones **no tienes derecho a la carrera horizontal**.</p>
+            <p>Pero no te desanimes, el SPPLB ha presentado Recurso Contencioso-Administrativo y veremos qué dice la Justicia.</p>
+            <p class="contact-info">Si estás en esta situación y quieres informarte, contacta con el SPPLB.</p>
+            <button onclick="goToScreen(1)" class="back-button">Volver al inicio</button>
+        </section>
+
+        <section class="screen" id="screen-3">
+            <h2>¿CUÁL ES TU ANTIGÜEDAD?</h2>
+            <div class="options-group">
+                <button onclick="goToScreen(31)">DE 0 A 5 AÑOS</button>
+                <button onclick="goToScreen(40)">DE 5 AÑOS Y 1 DÍA A 10 AÑOS</button>
+                <button onclick="goToScreen(48)">DE 10 AÑOS Y 1 DÍA A 15 AÑOS</button>
+                <button onclick="goToScreen(99)" disabled>DE 15 AÑOS Y 1 DÍA A 20 AÑOS (Próximamente)</button>
+                <button onclick="goToScreen(99)" disabled>DE 20 AÑOS Y 1 DÍA A 25 AÑOS (Próximamente)</button>
+                <button onclick="goToScreen(99)" disabled>DE 25 AÑOS Y 1 DÍA A 30 AÑOS (Próximamente)</button>
+                <button onclick="goToScreen(99)" disabled>DE 30 AÑOS Y 1 DÍA EN ADELANTE (Próximamente)</button>
+            </div>
+            <button onclick="goToScreen(2)" class="back-button">Atrás</button>
+        </section>
+
+        <section class="screen negative" id="screen-31">
+            <h2>LO SENTIMOS. TUS RETRIBUCIONES NO VAN A MEJORAR.</h2>
+            <div class="result-box">
+                <p>Con tu antigüedad **DE 0 A 5 AÑOS**:</p>
+                <p>Te correspondían **57,50 €/MES** en concepto de **ESPECIAL DEDICACIÓN REDUCIDA (EDER)**.</p>
+                <p>El nuevo acuerdo **NO MODIFICA LA CANTIDAD**.</p>
+            </div>
+            <button onclick="goToScreen(3)" class="back-button">Volver a Antigüedad</button>
+        </section>
+
+        <section class="screen negative" id="screen-40">
+            <h2>LO SENTIMOS. TUS RETRIBUCIONES NO VAN A MEJORAR.</h2>
+            <div class="result-box">
+                <p>Con tu antigüedad **DE 5 AÑOS Y 1 DÍA A 10 AÑOS**:</p>
+                <p>Te correspondían **136,67 €/MES** en concepto de **CARRERA HORIZONTAL**.</p>
+                <p>El nuevo acuerdo **NO MODIFICA LA CANTIDAD**.</p>
+            </div>
+            <button onclick="goToScreen(3)" class="back-button">Volver a Antigüedad</button>
+        </section>
+        
+        <section class="screen positive" id="screen-48">
+            <h2>¡ENHORABUENA!</h2>
+            <div class="result-box">
+                <p>Con tu antigüedad **DE 10 AÑOS Y 1 DÍA A 15 AÑOS**:</p>
+                <ul>
+                    <li>Antes cobrabas **180,21 €/MES** en concepto de **CARRERA HORIZONTAL**.</li>
+                    <li>Con el nuevo acuerdo, pasas a cobrar **215,84 €/MES**.</li>
+                </ul>
+                <p class="highlight">Es decir, **35,63 € MÁS AL MES**.</p>
+            </div>
+            <button onclick="goToScreen(3)" class="back-button">Volver a Antigüedad</button>
+        </section>
+
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
